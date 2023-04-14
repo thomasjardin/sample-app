@@ -1,11 +1,11 @@
 ###############################################################################
 # build environment                                                           #
 ###############################################################################
-FROM node:10 as build
+FROM node:lts-alpine as build
 
 WORKDIR /app
 COPY client/package*.json ./
-RUN npm install
+RUN npm install --only=prod
 
 COPY client/ ./
 RUN npm run build
@@ -14,7 +14,7 @@ RUN ls
 ###############################################################################
 # deployable environment                                                      #
 ###############################################################################
-FROM node:10 as deployable
+FROM node:lts-alpine as deployable
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -24,7 +24,7 @@ WORKDIR /usr/src/app
 COPY server/package*.json ./
 
 
-RUN npm install
+RUN npm install --only=prod
 
 # Bundle app source
 COPY server/ ./
