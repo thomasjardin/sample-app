@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a simple frontend that displays a list of products and lets you add more. Together with [product-be](https://github.com/walhall-tutorials/product-be), its purpose is to demonstrate how to deploy a simple app on the [Humanitec internal developer platform](https://humanitec.com).
+This is a simple frontend that displays a list of products and lets you add more. Together with [product-be]([https://github.com/humanitec-tutorials/product-be](https://github.com/humanitec-tutorials/sample-service)), its purpose is to demonstrate how to deploy a simple app on the [Humanitec internal developer platform](https://humanitec.com).
 
 The frontend consists of a client package and a server package. The client package is a React app and is served from `/`. The server package handles API requests from the client on the `/api` endpoint.
 
