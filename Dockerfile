@@ -6,7 +6,7 @@ FROM node:lts-alpine as build
 WORKDIR /app
 COPY client/package*.json ./
 RUN npm install --only=prod
-
+ENV NODE_OPTIONS=--openssl-legacy-provider
 COPY client/ ./
 RUN npm run build
 RUN ls
@@ -17,7 +17,7 @@ RUN ls
 FROM node:lts-alpine as deployable
 # Create app directory
 WORKDIR /usr/src/app
-
+ENV NODE_OPTIONS=--openssl-legacy-provider
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
