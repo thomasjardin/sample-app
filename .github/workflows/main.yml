@@ -50,8 +50,9 @@ jobs:
             --header 'Authorization: Bearer ${{ secrets.HUMANITEC_TOKEN }}' \
             --header 'Content-Type: application/json' \
             --data-raw '{ 
-                "branch": "'$GITHUB_REF_NAME'",
-                "commit": "'$GITHUB_SHA'",
-                "image": "'$ECR_REGISTRY/$ECR_REPOSITORY:$GITHUB_SHA'",
-                "tags": ["'$GITHUB_SHA'"]
+                "name": "'$ECR_REGISTRY/$ECR_REPOSITORY'",
+                "version": "'$GITHUB_SHA'",
+                "type": "container",
+                "commit": "'$GITHUB_SHA'"
+                "ref": "'$GITHUB_REF'"
             }'
