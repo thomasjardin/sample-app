@@ -46,7 +46,7 @@ jobs:
           ECR_REPOSITORY: ${{ secrets.REPO_NAME }}
         run: |-
           curl \
-            --request POST 'https://api.humanitec.io/orgs/'$HUMANITEC_ORG'/images/'$IMAGE_NAME'/builds' \
+            --request POST 'https://api.humanitec.io/orgs/alteia/artefact-versions' \
             --header 'Authorization: Bearer ${{ secrets.HUMANITEC_TOKEN }}' \
             --header 'Content-Type: application/json' \
             --data-raw '{ 
