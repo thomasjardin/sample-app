@@ -53,6 +53,6 @@ jobs:
                 "name": "'$ECR_REGISTRY/$ECR_REPOSITORY'",
                 "version": "'$GITHUB_SHA'",
                 "type": "container",
-                "commit": "'$GITHUB_SHA'"
+                "commit": "'$GITHUB_SHA'",
                 "ref": "'$GITHUB_REF'"
             }'
